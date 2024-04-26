@@ -18,7 +18,6 @@
 </template>
 <script>
 import { BaseTable } from "@/components";
-const tableColumns = ["Name", "Country", "City", "Salary"];
 
 export default {
   components: {
