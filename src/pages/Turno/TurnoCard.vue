@@ -6,7 +6,7 @@
       <h6>Estado: {{ turno.estado }}</h6>
       <h6>Inicio: {{ turno.inicio }}</h6>
       <h6>Fin: {{ turno.fin }}</h6>
-      <base-button @click="editTurno(turno.id)">Editar</base-button>
+      <!-- <base-button @click="editTurno(turno.id)">Editar</base-button> -->
     </card>
   </template>
   
