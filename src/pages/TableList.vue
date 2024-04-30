@@ -13,7 +13,6 @@
       </card>
     </div>
 
-
   </div>
 </template>
 <script>
@@ -22,34 +21,34 @@ import { BaseTable } from "@/components";
 export default {
   components: {
     BaseTable,
-  },data() {
+  },
+  data() {
     return {
       table1: {
-        title: "Simple Table",
-        columns: ['id', 'nroTrans', 'codEmp', 'linea', 'script', 'estado', 'resultadoEjecucion', 'fechaEjecucion', 'tipo', 'usuario'],
+        title: "Turnos",
+        columns: ['trx','nombre','usuario','estado','inicio','fin','fecha'],
         data: [],
       },
     };
   },
   created() {
-  fetch('http://192.168.1.135:8880/es/getES')
-    .then(response => response.json())
-    .then(data => {
-      this.table1.data = data.map(item => ({
-        id: item.id,
-        nroTrans: item.nroTrans,
-        codEmp: item.codEmp,
-        linea: item.linea,
-        script: item.script,
-        estado: item.estado,
-        resultadoEjecucion: item.resultadoEjecucion,
-        fechaEjecucion: item.fechaEjecucion,
-        tipo: item.tipo,
-        usuario: item.usuario
-      }));
-    })
-    .catch(error => console.error(error));
-}
+
+    this.loadTurnos();
+
+  },
+  methods: {
+
+    loadTurnos() {
+      fetch('http://127.0.0.1:8800/api/turnos')
+        .then(response => response.json())
+        .then(data => {
+          this.table1.data = data.datos;
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+          alert('Error fetching Turnos data'); 
+        });
+    }
+  }
 };
 </script>
-<style></style>
