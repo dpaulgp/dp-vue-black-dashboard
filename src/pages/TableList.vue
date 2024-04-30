@@ -59,7 +59,8 @@ export default {
         });
     },
     editTurno(row) {
-      alert('Editando turno: ' + row.trx);  
+      // alert('Editando turno: ' + row.trx);  
+      this.$router.push({ name: 'editTurno', params: { id: row.trx } });
     }
   }
 };

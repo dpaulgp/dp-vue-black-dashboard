@@ -16,6 +16,8 @@ const Typography = () =>
   import(/* webpackChunkName: "common" */ "@/pages/Typography.vue");
 const TableList = () =>
   import(/* webpackChunkName: "common" */ "@/pages/TableList.vue");
+const EditTurno = () =>
+  import(/* webpackChunkName: "common" */ "@/pages/EditTurno.vue");
 
 const routes = [
   {
@@ -57,6 +59,11 @@ const routes = [
         path: "table-list",
         name: "table-list",
         component: TableList,
+      },
+      {
+        path: "/edit-turno/:id",
+        name: "editTurno",
+        component: EditTurno,  // Asegúrate de que el componente exista
       },
     ],
   },
