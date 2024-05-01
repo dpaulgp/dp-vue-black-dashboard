@@ -28,18 +28,6 @@
       ></base-input>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-4">
-      <base-input
-        label="Estado"
-        v-model="turno.estado"
-        placeholder="Estado actual del turno"
-      ></base-input>
-    </div>
-  </div>
-          
-
   <div class="row">
   <div class="col-md-4">
     <label for="estado">Estado</label>
@@ -49,6 +37,8 @@
   </div>
 </div>
   <base-button slot="footer" type="primary" fill @click="saveChanges">Guardar Cambios</base-button>
+  <base-button slot="footer" type="primary" fill @click="cancel">Cancel</base-button>
+
 </card>
 </template>
 
@@ -75,7 +65,6 @@ export default {
         body: JSON.stringify(this.turno),
       })
       .then(response => {
-        // Check if the response is OK and the content is JSON
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -85,11 +74,15 @@ export default {
         console.log('Success:', data);
         this.$emit('turnoUpdated', data);
         // Handle successful operation here
+        this.$router.push({ name: 'table-list' });
       })
       .catch((error) => {
         console.error('Error:', error);
         // Handle errors here
       });
+    },
+    cancel() {
+      this.$router.push({ name: 'table-list' });
     }
   }
 };
