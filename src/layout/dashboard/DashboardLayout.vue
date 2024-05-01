@@ -8,32 +8,37 @@
           icon="tim-icons icon-chart-pie-36"
         />
         <sidebar-link
-          to="/icons"
+          to="/dashboard/icons"
           :name="$t('sidebar.icons')"
           icon="tim-icons icon-atom"
         />
         <sidebar-link
-          to="/maps"
+          to="/dashboard/maps"
           :name="$t('sidebar.maps')"
           icon="tim-icons icon-pin"
         />
         <sidebar-link
-          to="/notifications"
+          to="/dashboard/notifications"
           :name="$t('sidebar.notifications')"
           icon="tim-icons icon-bell-55"
         />
         <sidebar-link
-          to="/profile"
+          to="/dashboard/profile"
           :name="$t('sidebar.userProfile')"
           icon="tim-icons icon-single-02"
         />
         <sidebar-link
-          to="/table-list"
+          to="/dashboard/table-list"
           :name="$t('sidebar.tableList')"
           icon="tim-icons icon-puzzle-10"
         />
         <sidebar-link
-          to="/typography"
+          to="/dashboard/turno-list"
+          :name="$t('sidebar.turnoList')"
+          icon="tim-icons icon-puzzle-10"
+        />
+        <sidebar-link
+          to="/dashboard/typography"
           :name="$t('sidebar.typography')"
           icon="tim-icons icon-align-center"
         />

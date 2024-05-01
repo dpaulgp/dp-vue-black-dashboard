@@ -14,4 +14,70 @@ const router = new VueRouter({
   },
 });
 
+// Guardias de navegación para controlar el acceso
+// router.beforeEach((to, from, next) => {
+//   console.log('Navigating to:', to.path);
+//   const isAuthenticated = localStorage.getItem('token');
+//   if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
+//     next({ name: 'login' });
+//   } else if (to.name === 'login' && isAuthenticated) {
+//     next({ name: 'dashboard' });
+//   } else {
+//     next();
+//   }
+// });
+
+router.beforeEach((to, from, next) => {
+  console.log('Navigating from:', from.path, 'to:', to.path); // Muestra de dónde viene y a dónde va
+  console.log('Full route details to:', to); // Detalles completos de la ruta de destino
+  const isAuthenticated = localStorage.getItem('token');
+  console.log('Is authenticated:', isAuthenticated); // Muestra el estado de la autenticación
+
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    console.log('This route requires auth'); // Indica si la ruta requiere autenticación
+    if (!isAuthenticated) {
+      console.log('Not authenticated, redirecting to login'); // No autenticado, redirigir a login
+      next({ name: 'login' });
+    } else {
+      console.log('Authenticated, proceeding'); // Autenticado, continuar
+      next();
+    }
+  } else if (to.name === 'login' && isAuthenticated) {
+    console.log('Already authenticated, redirecting to dashboard'); // Ya autenticado, redirigir a dashboard
+    next({ name: 'dashboard' });
+  } else {
+    console.log('No special auth rules, proceeding'); // No hay reglas especiales de autenticación, continuar
+    next();
+  }
+});
+
+
+// Navigation Guard
+// router.beforeEach((to, from, next) => {
+//   const isAuthenticated = localStorage.getItem('token');
+//   if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
+//     next({ name: 'login' });
+//   } else if (to.name === 'login' && isAuthenticated) {
+//     next({ name: 'dashboard' });
+//   } else {
+//     next(); // proceed to route
+//   }
+// });
+
+// router.beforeEach((to, from, next) => {
+//   const isAuthenticated = localStorage.getItem('token'); // Asumimos que un token presente significa usuario autenticado
+//   if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
+//     // Si la ruta requiere autenticación y no hay token, redirigir a Login
+//     next({ name: 'login' });
+//   } else if (!to.matched.some(record => record.meta.requiresAuth) && isAuthenticated && to.name === 'login') {
+//     // Si el usuario está autenticado y está tratando de acceder a Login, redirigir a Dashboard
+//     next({ name: 'dashboard' });
+//   } else {
+//     // En cualquier otro caso, seguir con la ruta solicitada
+//     next();
+//   }
+// });
+
+
+
 export default router;
