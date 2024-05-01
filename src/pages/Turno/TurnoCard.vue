@@ -18,6 +18,11 @@
         required: true
       }
     },
+    methods: {
+    //   editTurno(id) {
+    //     this.$router.push({ name: 'editTurno', params: { id } });
+    //   }
+    }
   };
   </script>
   

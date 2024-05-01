@@ -44,7 +44,6 @@ export default {
         .catch(error => console.error('Error fetching turno data:', error));
     },
     getDefaultTurno() {
-    // Return a default or empty turno object
     return {
       nombre: '',
       estado: 'Activo',
