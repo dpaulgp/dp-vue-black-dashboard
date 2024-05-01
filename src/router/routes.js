@@ -61,9 +61,9 @@ const routes = [
         component: TableList,
       },
       {
-        path: "/edit-turno/:id",
+        path: "/edit-turno/:id?", //? means optional
         name: "editTurno",
-        component: EditTurno,  // Asegúrate de que el componente exista
+        component: EditTurno,  
       },
     ],
   },
