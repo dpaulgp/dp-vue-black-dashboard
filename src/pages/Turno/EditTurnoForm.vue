@@ -52,50 +52,50 @@
 </card>
 </template>
 
-
 <script>
 export default {
-props: {
-  turno: {
-    type: Object,
-    required: true
-  }
-},
-data() {
+  props: {
+    turno: {
+      type: Object,
+      required: true
+    }
+  },
+  data() {
     return {
-      estados: ["Activo", "Inactivo"],
+      estados: ["Activo", "Inactivo"]
     };
   },
-methods: {
-  // editTurno(id) {
-  //   this.$router.push({ name: 'editTurno', params: { id } });
-  // },
-  // saveChanges() {
-  //   // Emitir un evento para actualizar los datos en el componente padre
-  //   this.$emit('update:model', this.localModel);
-  // },
-
-  saveChanges(turno) {
-    fetch('http://localhost:8800/api/createTurno', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(turno),
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+  methods: {
+    saveChanges() {
+      fetch('http://localhost:8800/api/createTurno', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(this.turno),
+      })
+      .then(response => {
+        // Check if the response is OK and the content is JSON
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text().then(text => text ? JSON.parse(text) : {});
+      })
+      .then(data => {
+        console.log('Success:', data);
+        this.$emit('turnoUpdated', data);
+        // Handle successful operation here
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        // Handle errors here
+      });
+    }
   }
-
-  
-}
 };
 </script>
+
+
 
 <!-- 
 <script>
