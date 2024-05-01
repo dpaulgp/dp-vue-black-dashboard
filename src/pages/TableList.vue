@@ -54,16 +54,23 @@ created() {
 methods: {
 
   loadTurnos() {
-    fetch('http://127.0.0.1:8800/api/turnos')
-      .then(response => response.json())
-      .then(data => {
-        this.table1.data = data.datos;
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-        alert('Error fetching Turnos data'); 
-      });
-  },
+  const token = localStorage.getItem('token');  // Retrieve the token from storage
+  const headers = new Headers({
+    'Authorization': 'Bearer ' + token,  // Use Bearer authentication scheme
+    'Content-Type': 'application/json'
+  });
+
+  fetch('http://127.0.0.1:8800/api/turnos', { headers: headers })
+    .then(response => response.json())
+    .then(data => {
+      this.table1.data = data.datos;
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+      alert('Error fetching Turnos data'); 
+    });
+},
+
   editTurno(row) {
     // alert('Editando turno: ' + row.trx);  
     this.$router.push({ name: 'editTurno', params: { id: row.trx } });

@@ -33,10 +33,18 @@ export default {
   }
   },
   methods: {
+    
     fetchTurno() {
+
+      const token = localStorage.getItem('token');  // Retrieve the token from storage
+  const headers = new Headers({
+    'Authorization': 'Bearer ' + token,  // Use Bearer authentication scheme
+    'Content-Type': 'application/json'
+  });
+
       const turnoId = this.$route.params.id;
       console.log('fetching turno with id:', turnoId);
-      fetch(`http://localhost:8800/api/turno/${turnoId}`)
+      fetch(`http://localhost:8800/api/turno/${turnoId}`, { headers: headers })
         .then(response => response.json())
         .then(data => {
           this.turno = data;

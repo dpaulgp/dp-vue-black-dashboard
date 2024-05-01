@@ -57,11 +57,16 @@ export default {
   },
   methods: {
     saveChanges() {
+
+      const token = localStorage.getItem('token');  
+      const headers = new Headers({
+    'Authorization': 'Bearer ' + token,  // Use Bearer authentication scheme
+    'Content-Type': 'application/json'
+  });
+
       fetch('http://localhost:8800/api/createTurno', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: headers,
         body: JSON.stringify(this.turno),
       })
       .then(response => {
