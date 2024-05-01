@@ -70,10 +70,29 @@ methods: {
   // editTurno(id) {
   //   this.$router.push({ name: 'editTurno', params: { id } });
   // },
-  saveChanges() {
-    // Emitir un evento para actualizar los datos en el componente padre
-    this.$emit('update:model', this.localModel);
+  // saveChanges() {
+  //   // Emitir un evento para actualizar los datos en el componente padre
+  //   this.$emit('update:model', this.localModel);
+  // },
+
+  saveChanges(turno) {
+    fetch('http://localhost:8800/api/createTurno', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(turno),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
   }
+
+  
 }
 };
 </script>
