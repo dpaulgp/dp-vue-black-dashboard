@@ -1,5 +1,13 @@
 import VueRouter from "vue-router";
 import routes from "./routes";
+import { jwtDecode } from 'jwt-decode';
+
+function isTokenExpired(token) {
+  if (!token) return true;
+  const decoded = jwtDecode(token);
+  const currentTime = Date.now() / 1000; // current time in seconds
+  return decoded.exp < currentTime;
+}
 
 // configure router
 const router = new VueRouter({
@@ -14,23 +22,16 @@ const router = new VueRouter({
   },
 });
 
-// Guardias de navegación para controlar el acceso
-// router.beforeEach((to, from, next) => {
-//   console.log('Navigating to:', to.path);
-//   const isAuthenticated = localStorage.getItem('token');
-//   if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
-//     next({ name: 'login' });
-//   } else if (to.name === 'login' && isAuthenticated) {
-//     next({ name: 'dashboard' });
-//   } else {
-//     next();
-//   }
-// });
-
 router.beforeEach((to, from, next) => {
   console.log('Navigating from:', from.path, 'to:', to.path); // Muestra de dónde viene y a dónde va
   console.log('Full route details to:', to); // Detalles completos de la ruta de destino
-  const isAuthenticated = localStorage.getItem('token');
+  
+
+  const token = localStorage.getItem('token');
+  console.log('token:', token ); // Muestra el estado de la autenticación
+
+  console.log('Is expired:', isTokenExpired(token)); // Muestra el estado de la autenticación
+  const isAuthenticated = token && !isTokenExpired(token);
   console.log('Is authenticated:', isAuthenticated); // Muestra el estado de la autenticación
 
   if (to.matched.some(record => record.meta.requiresAuth)) {
@@ -50,33 +51,6 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-
-
-// Navigation Guard
-// router.beforeEach((to, from, next) => {
-//   const isAuthenticated = localStorage.getItem('token');
-//   if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
-//     next({ name: 'login' });
-//   } else if (to.name === 'login' && isAuthenticated) {
-//     next({ name: 'dashboard' });
-//   } else {
-//     next(); // proceed to route
-//   }
-// });
-
-// router.beforeEach((to, from, next) => {
-//   const isAuthenticated = localStorage.getItem('token'); // Asumimos que un token presente significa usuario autenticado
-//   if (to.matched.some(record => record.meta.requiresAuth) && !isAuthenticated) {
-//     // Si la ruta requiere autenticación y no hay token, redirigir a Login
-//     next({ name: 'login' });
-//   } else if (!to.matched.some(record => record.meta.requiresAuth) && isAuthenticated && to.name === 'login') {
-//     // Si el usuario está autenticado y está tratando de acceder a Login, redirigir a Dashboard
-//     next({ name: 'dashboard' });
-//   } else {
-//     // En cualquier otro caso, seguir con la ruta solicitada
-//     next();
-//   }
-// });
 
 
 
