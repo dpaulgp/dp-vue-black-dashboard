@@ -6,6 +6,9 @@
         -->
     <!-- -->
     <div class="sidebar-wrapper" id="style-3">
+
+      <!-- DP - LOGO -->
+<!-- 
       <div class="logo">
         <a
           href="http://www.creative-tim.com"
@@ -22,7 +25,7 @@
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
           {{ title }}
         </a>
-      </div>
+      </div> -->
       <slot> </slot>
       <ul class="nav">
         <!--By default vue-router adds an active class to each route link. This way the links are colored when clicked-->
