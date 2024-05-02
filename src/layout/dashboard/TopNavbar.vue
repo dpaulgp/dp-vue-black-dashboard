@@ -197,7 +197,7 @@ export default {
     logout() {
       // Remove the token from local storage or session storage
       localStorage.removeItem('token');  // Adjust based on where you store your token
-      
+      localStorage.removeItem('usuario');
       // Redirect to login or home page
       this.$router.push('/');  // Adjust the path based on your routing setup
     },
