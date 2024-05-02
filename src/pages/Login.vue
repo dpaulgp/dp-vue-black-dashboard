@@ -8,7 +8,7 @@
                     <div class="text-center text-muted mb-4">
                         <small>Sign in with credentials</small>
                     </div>
-                    <form role="form">
+                    <form @submit.prevent="login">
                         <base-input alternative
                                     class="mb-3"
 
@@ -25,7 +25,7 @@
                                     >
                         </base-input>
                         <div class="text-center">
-                            <base-button type="primary" class="my-4" fill @click="login">Sign In</base-button>
+                            <base-button type="submit" class="my-4" fill @click="login">Sign In</base-button>
                         </div>
                     </form>
                 </template>

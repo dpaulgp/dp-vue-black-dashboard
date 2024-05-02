@@ -140,7 +140,7 @@
               </li>
               <div class="dropdown-divider"></div>
               <li class="nav-link">
-                <a href="#" class="nav-item dropdown-item">Log out</a>
+                <a href="#" class="nav-item dropdown-item" @click.prevent="logout">Log out</a>
               </li>
             </base-dropdown>
           </ul>
@@ -193,6 +193,13 @@ export default {
     },
     toggleMenu() {
       this.showMenu = !this.showMenu;
+    },
+    logout() {
+      // Remove the token from local storage or session storage
+      localStorage.removeItem('token');  // Adjust based on where you store your token
+      
+      // Redirect to login or home page
+      this.$router.push('/');  // Adjust the path based on your routing setup
     },
   },
 };

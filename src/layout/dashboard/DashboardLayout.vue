@@ -12,11 +12,11 @@
           :name="$t('sidebar.icons')"
           icon="tim-icons icon-atom"
         />
-        <sidebar-link
+        <!-- <sidebar-link
           to="/dashboard/maps"
           :name="$t('sidebar.maps')"
           icon="tim-icons icon-pin"
-        />
+        /> -->
         <sidebar-link
           to="/dashboard/notifications"
           :name="$t('sidebar.notifications')"
@@ -27,11 +27,11 @@
           :name="$t('sidebar.userProfile')"
           icon="tim-icons icon-single-02"
         />
-        <sidebar-link
+        <!-- <sidebar-link
           to="/dashboard/table-list"
           :name="$t('sidebar.tableList')"
           icon="tim-icons icon-puzzle-10"
-        />
+        /> -->
         <sidebar-link
           to="/dashboard/turno-list"
           :name="$t('sidebar.turnoList')"
@@ -42,11 +42,11 @@
           :name="$t('sidebar.typography')"
           icon="tim-icons icon-align-center"
         />
-        <sidebar-link
+        <!-- <sidebar-link
           to="/dashboard?enableRTL=true"
           :name="$t('sidebar.rtlSupport')"
           icon="tim-icons icon-world"
-        />
+        /> -->
       </template>
     </side-bar>
     <div class="main-panel">
