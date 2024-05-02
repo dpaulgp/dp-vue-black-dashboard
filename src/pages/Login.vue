@@ -85,6 +85,7 @@
 .then(data => {
   if (data.token) {
     localStorage.setItem('token', data.token); // Save the token locally
+    localStorage.setItem('usuario', data.usuario); // Save the this.turno.usuario = JSON.parse(localStorage.getItem('user')); locally
     this.$router.push('/dashboard'); // Redirect to dashboard
   } else {
     this.error = 'Invalid credentials'; // Fallback error message

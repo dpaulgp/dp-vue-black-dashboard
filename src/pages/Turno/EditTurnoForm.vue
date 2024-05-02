@@ -63,6 +63,7 @@ export default {
     'Authorization': 'Bearer ' + token,  // Use Bearer authentication scheme
     'Content-Type': 'application/json'
   });
+      console.log(this.turno);
 
       fetch('http://localhost:8800/api/createTurno', {
         method: 'POST',
@@ -79,7 +80,7 @@ export default {
         console.log('Success:', data);
         this.$emit('turnoUpdated', data);
         // Handle successful operation here
-        this.$router.push({ name: 'table-list' });
+        this.$router.push({ name: 'turno-list' });
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -87,7 +88,7 @@ export default {
       });
     },
     cancel() {
-      this.$router.push({ name: 'table-list' });
+      this.$router.push({ name: 'turno-list' });
     }
   }
 };

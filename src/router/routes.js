@@ -11,6 +11,7 @@ const Icons = () => import(/* webpackChunkName: "common" */ "@/pages/Icons.vue")
 const Maps = () => import(/* webpackChunkName: "common" */ "@/pages/Maps.vue");
 const Typography = () => import(/* webpackChunkName: "common" */ "@/pages/Typography.vue");
 const TableList = () => import(/* webpackChunkName: "common" */ "@/pages/TableList.vue");
+const TurnoList = () => import(/* webpackChunkName: "common" */ "@/pages/TurnoList.vue");
 const EditTurno = () => import(/* webpackChunkName: "common" */ "@/pages/EditTurno.vue");
 
 // Definición de rutas
@@ -37,6 +38,7 @@ const routes = [
       { path: "maps", name: "maps", component: Maps },
       { path: "typography", name: "typography", component: Typography },
       { path: "table-list", name: "table-list", component: TableList },
+      { path: "turno-list", name: "turno-list", component: TurnoList },
       { path: "/edit-turno/:id?", name: "editTurno", component: EditTurno },
     ],
   },

@@ -57,6 +57,7 @@ export default {
       estado: 'Activo',
       inicio: '',
       fin: '',
+      usuario: localStorage.getItem('usuario'),
     };
   },
   }
