@@ -3,28 +3,27 @@
     <div class="container-fluid">
       <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link" href="http://www.creative-tim.com">
+          <!-- <a class="nav-link" href="http://www.creative-tim.com">
             Creative Tim
-          </a>
+          </a> -->
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="http://blog.creative-tim.com"> Blog </a>
-        </li>
+        </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="http://www.creative-tim.com/license">
+          <!-- <a class="nav-link" href="http://www.creative-tim.com/license">
             Licenses
-          </a>
+          </a> -->
         </li>
       </ul>
       <div class="copyright">
-        © {{ year }} made with <i class="tim-icons icon-heart-2"></i> by
-        <a href="https://www.binarcode.com" target="_blank" rel="noopener"
-          >Binar Code</a
-        >&nbsp;&
+        © {{ year }} made with <i class="tim-icons icon-heart-2"></i> by DP
+
+        <!-- <a href="https://www.binarcode.com" target="_blank" rel="noopener"
+          >Binar Code</a>&nbsp;&
         <a href="https://www.creative-tim.com" target="_blank" rel="noopener"
-          >Creative Tim</a
-        >
-        for a better web.
+          >Creative Tim</a>
+        for a better web. -->
       </div>
     </div>
   </footer>
