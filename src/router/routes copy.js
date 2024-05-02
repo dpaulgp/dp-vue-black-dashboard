@@ -38,8 +38,18 @@ const routes = [
       // { path: "maps", name: "maps", component: Maps },
       { path: "typography", name: "typography", component: Typography },
       // { path: "table-list", name: "table-list", component: TableList },
-      { path: "turno-list", name: "turno-list", component: TurnoList },
-      { path: "/edit-turno/:id?", name: "editTurno", component: EditTurno },
+      { 
+        path: "turno-list",
+        name: "turno-list",
+        component: TurnoList,
+        children: [
+          // EditTurno as a child route
+          { path: "edit-turno/:id?", name: "editTurno", component: EditTurno }
+        ]
+      },
+
+      // { path: "turno-list", name: "turno-list", component: TurnoList },
+      // { path: "/edit-turno/:id?", name: "editTurno", component: EditTurno },
     ],
   },
   
