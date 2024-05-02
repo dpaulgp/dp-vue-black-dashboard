@@ -16,7 +16,7 @@
           <base-button type="info" size="sm" @click="editTurno(row)" icon>
             <i class="tim-icons icon-pencil"></i>
           </base-button>
-          <base-button type="danger" size="sm" icon>
+          <base-button type="danger" size="sm" @click="deleteTurno(row)" icon>
             <i class="tim-icons icon-simple-remove"></i>
           </base-button>
 
@@ -77,7 +77,41 @@ methods: {
   },
   createTurno() {
   this.$router.push({ name: 'editTurno' });  
-      }
+      },
+
+
+      deleteTurno(row) {
+  const token = localStorage.getItem('token');  // Retrieve the token from storage
+  const headers = new Headers({
+    'Authorization': 'Bearer ' + token,  // Use Bearer authentication scheme
+    'Content-Type': 'application/json'
+  });
+
+  const url = `http://localhost:8800/api/delete-turno/${row.trx}`;  // Use the `id` from the row to construct the URL
+
+  console.log('Deleting Turno:', row.trx);
+  fetch(url, {
+    method: 'DELETE',
+    headers: headers
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(() => {
+    alert('Turno deleted successfully');
+    this.loadTurnos();  // Reload the list of turnos to reflect the deletion
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    alert('Error deleting Turno');
+  });
+},
+
+
+
 }
 };
 </script>
