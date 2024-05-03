@@ -18,7 +18,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" >
   <div class="col-md-6 pr-md-1">
     <label for="finTurno">Fin de Turno</label> <!-- Asegúrate de que el 'for' en el label coincida con el 'id' del select -->
     <select class="form-control" id="finTurno" v-model="controlPlanta.finTurno">
@@ -32,6 +32,7 @@
     </h3>
   </div>
 </div>
+
 <div class="row">
       <div class="col-md-8 pr-md-1">
         <base-input>
@@ -47,41 +48,7 @@
         </base-input>
       </div>
     </div>
-
-
-
-
-
-
-
-  <!-- <div class="row"> -->
-<!-- 
-    <div class="col-md-6 pr-md-1">
-      <base-input
-        label="Inicio"
-        type="time"
-        v-model="turno.horaInicio"
-      ></base-input>
-    </div>
-    <div class="col-md-6 pl-md-1">
-      <base-input
-        label="Fin"
-        type="time"
-        v-model="turno.horaFin"
-      ></base-input>
-    </div> -->
-  <!-- </div> -->
-  <!-- <div class="row">
-  <div class="col-md-4">
-    <label for="estado">Estado</label>
-    <select class="form-control" id="estado" v-model="turno.estado">
-      <option v-for="estado in estados" :key="estado" :value="estado">{{ estado }}</option>
-    </select>
-  </div> -->
-<!-- </div> -->
-  <!-- <base-button slot="footer" type="primary" fill @click="saveChanges">Guardar Cambios</base-button>
-  <base-button slot="footer" type="primary" fill @click="cancel">Cancel</base-button> -->
-
+    <base-button slot="footer" type="primary" fill>Aceptar</base-button>
 </card>
 </template>
 

@@ -24,6 +24,10 @@
     <div class="col-md-12">
       <produccion-form :controlPlanta="controlPlanta"> </produccion-form>
     </div>
+
+    <div class="col-md-12">
+      <control-planta-card :user="user"> </control-planta-card>
+    </div>
   </div>
 </template>
 <script>
@@ -31,6 +35,7 @@ import ControlPlantaHeaderCard from "./Produccion/ControlPlantaHeaderCard";
 import ProduccionForm from "./Produccion/ProduccionForm";
 import ControlPlantaHInfoCard from "./Produccion/ControlPlantaHInfoCard";
 import ControlPlantaHUserCard from "./Produccion/ControlPlantaHUserCard.vue";
+import ControlPlantaCard from "./Produccion/ControlPlantaCard.vue";
 
 export default {
   components: {
@@ -38,6 +43,7 @@ export default {
     ControlPlantaHInfoCard,
     ControlPlantaHUserCard,
     ProduccionForm,
+    ControlPlantaCard,
   },
   data() {
     return {
