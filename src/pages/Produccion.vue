@@ -2,8 +2,13 @@
   <div class="row">
 
     <div class="col-md-12">
-      
       <control-planta-header-card :controlPlantaHeader="controlPlantaHeader"></control-planta-header-card>
+    </div>
+    <div class="col-md-6">
+      <control-planta-h-info-card :controlPlantaHeader="controlPlantaHeader"></control-planta-h-info-card>
+    </div>
+    <div class="col-md-6">
+      <control-planta-h-user-card :controlPlantaHeader="controlPlantaHeader"></control-planta-h-user-card>
     </div>
     <!-- <div class="col-md-12">
       <produccion-form :controlPlanta="controlPlanta"> </produccion-form>
@@ -13,9 +18,14 @@
 <script>
 import ControlPlantaHeaderCard from "./Produccion/ControlPlantaHeaderCard";
 import ProduccionForm from "./Produccion/ProduccionForm";
+import ControlPlantaHInfoCard from "./Produccion/ControlPlantaHInfoCard";
+import ControlPlantaHUserCard from "./Produccion/ControlPlantaHUserCard.vue";
+
 export default {
   components: {
     ControlPlantaHeaderCard,
+    ControlPlantaHInfoCard,
+    ControlPlantaHUserCard,
     // ProduccionForm,
   },
   data() {
