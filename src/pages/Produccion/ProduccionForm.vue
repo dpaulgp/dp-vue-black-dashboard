@@ -15,7 +15,7 @@
 
   <div class="row">
   <div class="col-md-4">
-    <label for="finTurno">Reportadas</label> 
+    <label for="finTurno">Acumulado</label> 
     <h3 class="card-title">
               <i class="tim-icons icon-components text-primary"></i> 100
     </h3>
@@ -24,25 +24,41 @@
 
 <div class="row">
   <div class="col-md-4">
-    <label for="finTurno">Acumuladas</label> 
-    <h3 class="card-title">
-              <i class="tim-icons icon-alert-circle-exc text-primary"></i> 12
-    </h3>
-  </div>
-</div>
-
-
-
-
-
-  <div class="row">
-  <div class="col-md-4">
     <label for="finTurno">Fin de Turno</label> <!-- Asegúrate de que el 'for' en el label coincida con el 'id' del select -->
     <select class="form-control" id="finTurno" v-model="controlPlanta.finTurno">
       <option v-for="finTurnoOption in finTurnoOptions" :key="finTurnoOption" :value="finTurnoOption">{{ finTurnoOption }}</option>
     </select>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-4">
+    <label for="finTurno">Faltante</label> 
+    <h3 class="card-title">
+              <i class="tim-icons icon-alert-circle-exc text-primary"></i> 12
+    </h3>
+  </div>
+</div>
+<div class="row">
+      <div class="col-md-8">
+        <base-input>
+          <label>Observaciones</label>
+          <textarea
+            rows="4"
+            cols="80"
+            class="form-control"
+            placeholder="..."
+            v-model="controlPlanta.observaciones"
+          >
+          </textarea>
+        </base-input>
+      </div>
+    </div>
+
+
+
+
+
 
 
   <!-- <div class="row"> -->
