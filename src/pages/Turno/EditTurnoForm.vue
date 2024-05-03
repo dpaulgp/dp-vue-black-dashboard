@@ -17,14 +17,14 @@
       <base-input
         label="Inicio"
         type="time"
-        v-model="turno.inicio"
+        v-model="turno.horaInicio"
       ></base-input>
     </div>
     <div class="col-md-6 pl-md-1">
       <base-input
         label="Fin"
         type="time"
-        v-model="turno.fin"
+        v-model="turno.horaFin"
       ></base-input>
     </div>
   </div>

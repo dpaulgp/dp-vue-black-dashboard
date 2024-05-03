@@ -8,8 +8,8 @@
             <td>{{ row.nombre }}</td>
             <td>{{ row.usuario }}</td>
             <td>{{ row.estado }}</td>
-            <td>{{ row.inicio }}</td>
-            <td>{{ row.fin }}</td>
+            <td>{{ row.horaInicio }}</td>
+            <td>{{ row.horaFin }}</td>
             <td>{{ row.fecha }}</td>
             <td class="td-actions text-left">
               
