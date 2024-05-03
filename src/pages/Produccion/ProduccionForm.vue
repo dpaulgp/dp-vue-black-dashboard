@@ -56,7 +56,6 @@ export default {
     };
   },
   methods: {
-    // Emitir un evento para actualizar los datos en el componente padre
     saveChanges() {
 
       const token = localStorage.getItem('token');  
@@ -88,7 +87,6 @@ export default {
         // Handle errors here
       });
     },
-    // Cancelar la edición y volver a la lista de turnos
     cancel() {
       this.$router.push({ name: 'turno-list' });
     }
@@ -97,26 +95,3 @@ export default {
 </script>
 
 
-
-<!-- 
-<script>
-export default {
-props: {
-  model: {
-    type: Object,
-    default: () => ({})
-  }
-},
-data() {
-  return {
-    localModel: JSON.parse(JSON.stringify(this.model))
-  };
-},
-methods: {
-  saveChanges() {
-    // Emitir un evento para actualizar los datos en el componente padre
-    this.$emit('update:model', this.localModel);
-  }
-}
-};
-</script> -->

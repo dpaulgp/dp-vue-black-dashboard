@@ -33,24 +33,24 @@ export default {
   }
   },
   methods: {
-    
+    // Fetch turno data from the API
     fetchTurno() {
-
       const token = localStorage.getItem('token');  // Retrieve the token from storage
   const headers = new Headers({
     'Authorization': 'Bearer ' + token,  // Use Bearer authentication scheme
     'Content-Type': 'application/json'
   });
-
       const turnoId = this.$route.params.id;
       console.log('fetching turno with id:', turnoId);
-      fetch(`http://localhost:8800/api/turno/${turnoId}`, { headers: headers })
+      fetch(`http://localhost:8800/api/turno/${turnoId}`, 
+      { headers: headers })
         .then(response => response.json())
         .then(data => {
           this.turno = data;
         })
         .catch(error => console.error('Error fetching turno data:', error));
     },
+    // Initialize with default or empty data
     getDefaultTurno() {
     return {
       nombre: '',

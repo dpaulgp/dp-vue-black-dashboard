@@ -13,6 +13,7 @@ const Typography = () => import(/* webpackChunkName: "common" */ "@/pages/Typogr
 // const TableList = () => import(/* webpackChunkName: "common" */ "@/pages/TableList.vue");
 const TurnoList = () => import(/* webpackChunkName: "common" */ "@/pages/TurnoList.vue");
 const EditTurno = () => import(/* webpackChunkName: "common" */ "@/pages/EditTurno.vue");
+const Produccion = () => import(/* webpackChunkName: "common" */ "@/pages/Produccion.vue");
 
 // Definición de rutas
 const routes = [
@@ -39,7 +40,12 @@ const routes = [
       { path: "typography", name: "typography", component: Typography },
       // { path: "table-list", name: "table-list", component: TableList },
       { path: "turno-list", name: "turno-list", component: TurnoList },
-      { path: "/edit-turno/:id?", name: "editTurno", component: EditTurno },
+      { path: "edit-turno/:id?", name: "editTurno", component: EditTurno },
+      { path:
+        "produccion", 
+        name: "produccion", 
+        component: Produccion 
+      },
 
       //       { 
       //   path: "turno-list",
