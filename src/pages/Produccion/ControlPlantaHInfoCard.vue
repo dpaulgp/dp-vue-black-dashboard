@@ -1,39 +1,26 @@
 <template>
   <card>
     <div class="author">
-      <!-- Columna Sección -->
       <div class="block">
-        <span>Turno</span>
-        <p class="card-text">
-          {{ controlPlantaHeader.turno.nombre }}
-        </p>
-      </div>
-      <!-- Columna Máquina -->
-      <div class="block">
-        <span>Referencia</span>
-        <p class="card-text">
-          {{ controlPlantaHeader.referencia }}
-        </p>
+        <span class="label">Turno:</span>
+        <p class="card-text">{{ controlPlantaHeader.turno.nombre }}</p>
       </div>
       <div class="block">
-        <span>Talla</span>
-        <p class="card-text">
-          {{ controlPlantaHeader.talla }}
-        </p>
+        <span class="label">Referencia:</span>
+        <p class="card-text">{{ controlPlantaHeader.referencia }}</p>
       </div>
       <div class="block">
-        <span>Lote</span>
-        <p class="card-text">
-          {{ controlPlantaHeader.lote }}
-        </p>
+        <span class="label">Talla:</span>
+        <p class="card-text">{{ controlPlantaHeader.talla }}</p>
       </div>
       <div class="block">
-        <span>Cantidad</span>
-        <p class="card-text">
-          {{ controlPlantaHeader.cantidadProducida }}
-        </p>
+        <span class="label">Lote:</span>
+        <p class="card-text">{{ controlPlantaHeader.lote }}</p>
       </div>
-
+      <div class="block">
+        <span class="label">Cantidad:</span>
+        <p class="card-text">{{ controlPlantaHeader.cantidadProducida }}</p>
+      </div>
     </div>
   </card>
 </template>
@@ -58,7 +45,16 @@ export default {
   /* Eliminamos las propiedades de flexbox para que sea en bloque */
 }
 .block {
-  text-align: left; /* Centra el texto dentro de cada bloque */
-  margin-bottom: 10px; /* Espacio entre bloques */
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos dentro del bloque */
+  text-align: left;
+  margin-bottom: 10px;
+}
+.label {
+  /* font-weight: bold; */
+  margin-right: 10px; /* Espacio entre la etiqueta y el texto */
+}
+.card-text {
+  margin: 0; /* Elimina márgenes predeterminados para ajustar el alineamiento */
 }
 </style>

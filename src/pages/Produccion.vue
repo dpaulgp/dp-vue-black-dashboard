@@ -7,12 +7,23 @@
     <div class="col-md-6">
       <control-planta-h-info-card :controlPlantaHeader="controlPlantaHeader"></control-planta-h-info-card>
     </div>
+
     <div class="col-md-6">
       <control-planta-h-user-card :controlPlantaHeader="controlPlantaHeader"></control-planta-h-user-card>
     </div>
-    <!-- <div class="col-md-12">
+
+
+    <div class="col-md-12">
+  <div class="card text-white bg-info mb-3" >
+    <div class="card-body text-center">
+        Reporte de Producción
+    </div>
+  </div>
+</div>
+
+    <div class="col-md-12">
       <produccion-form :controlPlanta="controlPlanta"> </produccion-form>
-    </div> -->
+    </div>
   </div>
 </template>
 <script>
@@ -26,7 +37,7 @@ export default {
     ControlPlantaHeaderCard,
     ControlPlantaHInfoCard,
     ControlPlantaHUserCard,
-    // ProduccionForm,
+    ProduccionForm,
   },
   data() {
     return {
@@ -78,6 +89,70 @@ export default {
         title: "Ceo/Co-Founder",
         description: `Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...`,
       },
+      controlPlanta: {
+    "id": null,
+    "controlPlantaHeader": {
+        "id": null,
+        "maquina": {
+            "id": null,
+            "seccion": {
+                "id": null,
+                "codEmp": "",
+                "nombre": "",
+                "estado": "",
+                "fechaHoraRegistro": "",
+                "usuario": ""
+            },
+            "codigo": "",
+            "nombre": "",
+            "usuario": "",
+            "fechaHoraRegistro": "",
+            "estado": ""
+        },
+        "turno": {
+            "trx": null,
+            "usuario": "",
+            "nombre": "",
+            "horaInicio": "",
+            "horaFin": "",
+            "fechaDate": "",
+            "estado": "",
+            "codEmp": ""
+        },
+        "fechaHora": "",
+        "lote": "",
+        "referencia": "",
+        "talla": "",
+        "color": "",
+        "cantidadProducida": null,
+        "peso": null,
+        "tejido": "",
+        "tecnicaAPC": "",
+        "calibrePiezaMaquina": "",
+        "tecnicoMonitor": "",
+        "coordinadorCalidad": "",
+        "fechaHoraCreacion": "",
+        "usuario": ""
+    },
+    "cantidad": null,
+    "peso1B": null,
+    "causa": "",
+    "fechaHoraInicioTransaccion": "",
+    "fechaHoraInicioAtencion": "",
+    "fechaHoraFinTransaccion": "",
+    "tiempoTransaccion": null,
+    "usuarioTransaccion": "",
+    "operador": "",
+    "tipoTransaccion": "",
+    "usuarioAtencion": "",
+    "usuarioFinalizacion": "",
+    "finTurno": "",
+    "inicioParte": "",
+    "observaciones": "",
+    "reporte1AsB": null,
+    "reporte": null
+}
+
     };
   },
 
