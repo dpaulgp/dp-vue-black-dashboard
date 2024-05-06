@@ -48,7 +48,7 @@
         </base-input>
       </div>
     </div>
-    <base-button slot="footer" type="primary" fill>Aceptar</base-button>
+    <base-button slot="footer" type="primary" fill @click="saveChanges">Aceptar</base-button>
 </card>
 </template>
 
@@ -65,42 +65,46 @@ export default {
       finTurnoOptions: ["S", "N"]
     };
   },
-  // methods: {
-  //   saveChanges() {
+  methods: {
+    saveChanges() {
 
-  //     const token = localStorage.getItem('token');  
-  //     const headers = new Headers({
-  //   'Authorization': 'Bearer ' + token,  // Use Bearer authentication scheme
-  //   'Content-Type': 'application/json'
-  // });
-  //     console.log(this.turno);
+      const token = localStorage.getItem('token');  
+      const headers = new Headers({
+    'Authorization': 'Bearer ' + token,  // Use Bearer authentication scheme
+    'Content-Type': 'application/json'
+  });
+      //Asignar el controlPlantaHeader al controlPlanta
 
-  //     fetch('http://localhost:8800/api/createTurno', {
-  //       method: 'POST',
-  //       headers: headers,
-  //       body: JSON.stringify(this.turno),
-  //     })
-  //     .then(response => {
-  //       if (!response.ok) {
-  //         throw new Error('Network response was not ok');
-  //       }
-  //       return response.text().then(text => text ? JSON.parse(text) : {});
-  //     })
-  //     .then(data => {
-  //       console.log('Success:', data);
-  //       this.$emit('turnoUpdated', data);
-  //       // Handle successful operation here
-  //       this.$router.push({ name: 'turno-list' });
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error:', error);
-  //       // Handle errors here
-  //     });
-  //   },
-  //   cancel() {
-  //     this.$router.push({ name: 'turno-list' });
-  //   }
-  // }
+      console.log(this.controlPlanta);
+      console.log(this.controlPlanta.controlPlantaHeader);
+
+
+      fetch('http://localhost:8800/controlPlanta/registrarEvento', {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(this.controlPlanta),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.text().then(text => text ? JSON.parse(text) : {});
+      })
+      .then(data => {
+        console.log('Success:', data);
+        // this.$emit('turnoUpdated', data);
+        // Handle successful operation here
+        // this.$router.push({ name: 'turno-list' });
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        // Handle errors here
+      });
+    },
+    // cancel() {
+    //   this.$router.push({ name: 'turno-list' });
+    // }
+  }
 };
 </script>
 

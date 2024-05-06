@@ -13,6 +13,11 @@
           icon="tim-icons icon-spaceship"
         />
         <sidebar-link
+          to="/dashboard/turno-list"
+          :name="$t('sidebar.turnoList')"
+          icon="tim-icons icon-puzzle-10"
+        />
+        <sidebar-link
           to="/dashboard/icons"
           :name="$t('sidebar.icons')"
           icon="tim-icons icon-atom"
@@ -37,11 +42,7 @@
           :name="$t('sidebar.tableList')"
           icon="tim-icons icon-puzzle-10"
         /> -->
-        <sidebar-link
-          to="/dashboard/turno-list"
-          :name="$t('sidebar.turnoList')"
-          icon="tim-icons icon-puzzle-10"
-        />
+
         <sidebar-link
           to="/dashboard/typography"
           :name="$t('sidebar.typography')"
