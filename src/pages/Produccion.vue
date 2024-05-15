@@ -93,10 +93,14 @@ export default {
         'Authorization': 'Bearer ' + token,
         'Content-Type': 'application/json'
       });
-      const maquinaId = 1;
+      const maquinaId = 5;
       console.log('fetching maquinaId with id:', maquinaId);
 
-      fetch(`http://localhost:8800/controlPlantaHeader/maquina/${maquinaId}`, {
+      fetch(`http://localhost:8800/controlPlantaHeader/params/${maquinaId}`, 
+
+
+      // fetch(`http://localhost:8800/controlPlantaHeader/maquina/${maquinaId}`, 
+      {
     headers: headers
 })
 .then(response => {

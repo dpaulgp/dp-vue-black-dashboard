@@ -21,6 +21,22 @@
         <span class="label">Cantidad:</span>
         <p class="card-text">{{ controlPlantaHeader.cantidadProducida }}</p>
       </div>
+
+      <div class="row">
+
+<div class="col-md-6 pr-md-1">
+  <label for="finTurno">Acumulado</label> 
+  <h3 class="card-title">
+    <i class="tim-icons icon-components text-primary"></i> {{ controlPlantaHeader.acumulado }}
+  </h3>
+</div>
+<div class="col-md-6 pr-md-1">
+  <label for="finTurno">Faltante</label> 
+  <h3 class="card-title">
+    <i class="tim-icons icon-alert-circle-exc text-primary"></i> {{ controlPlantaHeader.faltante }}
+  </h3>
+</div>
+</div>
     </div>
   </card>
 </template>

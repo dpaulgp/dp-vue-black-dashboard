@@ -1,8 +1,10 @@
 <template>
 <card>
   <!-- <h5 slot="header" class="title">Editar Turno</h5> -->
-  <div class="row">
-    <div class="col-md-6 pr-md-1">
+
+<div class="row" >
+
+  <div class="col-md-6 pr-md-1">
       <base-input
         label="Reportadas"
         placeholder="Cantidad"
@@ -11,26 +13,12 @@
       </base-input>
     </div>
   <div class="col-md-6 pr-md-1">
-    <label for="finTurno">Acumulado</label> 
-    <h3 class="card-title">
-              <i class="tim-icons icon-components text-primary"></i> 100
-    </h3>
-  </div>
-</div>
-
-<div class="row" >
-  <div class="col-md-6 pr-md-1">
     <label for="finTurno">Fin de Turno</label> <!-- Asegúrate de que el 'for' en el label coincida con el 'id' del select -->
     <select class="form-control" id="finTurno" v-model="controlPlanta.finTurno">
       <option v-for="finTurnoOption in finTurnoOptions" :key="finTurnoOption" :value="finTurnoOption">{{ finTurnoOption }}</option>
     </select>
   </div>
-  <div class="col-md-6 pr-md-1">
-    <label for="finTurno">Faltante</label> 
-    <h3 class="card-title">
-              <i class="tim-icons icon-alert-circle-exc text-primary"></i> 12
-    </h3>
-  </div>
+
 </div>
 
 <div class="row">
