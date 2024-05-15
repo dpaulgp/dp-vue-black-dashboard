@@ -46,7 +46,8 @@ export default {
   props: {
     controlPlanta: {
       type: Object,
-      required: true
+      required: true,
+      tipoTransaccion: "P"  
     }
   },
   data() {
