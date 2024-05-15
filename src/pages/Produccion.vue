@@ -21,8 +21,10 @@
     </div>
 
     <div class="col-md-12">
-      <produccion-form :controlPlanta="controlPlanta"> </produccion-form>
+      <produccion-form :controlPlanta="controlPlantaHeader.controlPlantaNew"> </produccion-form>
+      <!-- <produccion-form v-if="controlPlanta && Object.keys(controlPlanta).length > 0" :controlPlanta="controlPlantaHeader.controlPlantaNew"></produccion-form> -->
     </div>
+    
 
     <!-- <div class="col-md-12">
       <control-planta-card :user="user"> </control-planta-card>
@@ -68,6 +70,7 @@ export default {
 
 
       controlPlantaHeader: {
+        controlPlantaNew: {},
         maquina: {
         seccion: {}  
         },
@@ -75,7 +78,6 @@ export default {
 
       },  
 
-      controlPlanta: {},
       modal0: false,
       disableCloseButton: true 
 
@@ -83,7 +85,7 @@ export default {
   },
   created() {
       this.fetchControlPlantaHeader();
-      this.fetchControlPlanta();
+      // this.fetchControlPlanta();
     },
     methods: {
 
@@ -97,8 +99,6 @@ export default {
       console.log('fetching maquinaId with id:', maquinaId);
 
       fetch(`http://localhost:8800/controlPlantaHeader/params/${maquinaId}`, 
-
-
       // fetch(`http://localhost:8800/controlPlantaHeader/maquina/${maquinaId}`, 
       {
     headers: headers
@@ -122,21 +122,21 @@ export default {
     },
 
 
-    fetchControlPlanta() {
-      const token = localStorage.getItem('token');  
-      const headers = new Headers({
-      'Authorization': 'Bearer ' + token, 
-      'Content-Type': 'application/json'
-  });
-      console.log('fetching ControlPlanta with starter');
-      fetch(`http://localhost:8800/controlPlanta/starter`, 
-      { headers: headers })
-        .then(response => response.json())
-        .then(data => {
-          this.controlPlanta = data;
-        })
-        .catch(error => console.error('Error fetching turno data:', error));
-    },
+  //   fetchControlPlanta() {
+  //     const token = localStorage.getItem('token');  
+  //     const headers = new Headers({
+  //     'Authorization': 'Bearer ' + token, 
+  //     'Content-Type': 'application/json'
+  // });
+  //     console.log('fetching ControlPlanta with starter');
+  //     fetch(`http://localhost:8800/controlPlanta/starter`, 
+  //     { headers: headers })
+  //       .then(response => response.json())
+  //       .then(data => {
+  //         this.controlPlanta = data;
+  //       })
+  //       .catch(error => console.error('Error fetching turno data:', error));
+  //   },
 
     redirect() {
       this.$router.push({ name: 'dashboard' });

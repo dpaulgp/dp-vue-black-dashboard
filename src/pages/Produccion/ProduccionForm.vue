@@ -2,6 +2,7 @@
 <card>
   <!-- <h5 slot="header" class="title">Editar Turno</h5> -->
 
+
 <div class="row" >
 
   <div class="col-md-6 pr-md-1">
