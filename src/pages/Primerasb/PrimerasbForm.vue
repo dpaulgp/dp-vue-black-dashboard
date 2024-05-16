@@ -33,6 +33,12 @@
         </base-input>
       </div>
     </div>
+    <div class="col-md-6 pr-md-1">
+  <label for="finTurno">Acumulado 1asB</label> 
+  <h3 class="card-title">
+    <i class="tim-icons icon-components text-primary"></i> {{ controlPlanta.acumuladoPrimerasbCP }}
+  </h3>
+</div>
     <base-button slot="footer" type="primary" fill @click="saveChanges">Aceptar</base-button>
   </card>
   </template>
