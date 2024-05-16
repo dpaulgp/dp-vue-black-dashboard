@@ -1,7 +1,7 @@
 <template>
   <card>
     <div class="row">
-      <div class="col-md-6 pr-md-1">
+      <div class="col-md-4 pr-md-1">
         <label for="causaControlPlanta">Causa de Control de Planta</label>
         <select class="form-control" id="causaControlPlanta" v-model="controlPlanta.causa">
           <option v-for="causa in causasOptions" :key="causa.id" :value="causa.id">
@@ -9,11 +9,19 @@
           </option>
         </select>
       </div>
-      <div class="col-md-6 pr-md-1">
+      <div class="col-md-4 pr-md-1">
       <base-input
         label="Reportadas"
-        placeholder="Cantidad"
+        placeholder="Unidades"
         v-model="controlPlanta.reporte1AsB"
+      >
+      </base-input>
+    </div>
+    <div class="col-md-4 pr-md-1">
+      <base-input
+        label="Peso"
+        placeholder="Kg"
+        v-model="controlPlanta.peso1B"
       >
       </base-input>
     </div>
