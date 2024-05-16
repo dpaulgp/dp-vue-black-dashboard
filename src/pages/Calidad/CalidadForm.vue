@@ -33,7 +33,7 @@
         </base-input>
       </div>
     </div>
-    <base-button slot="footer" type="primary" fill @click="saveChanges">Aceptar</base-button>
+    <base-button slot="footer" type="primary" fill @click="saveChanges" :disabled="controlPlanta.estado !== 0">Aceptar</base-button>
   </card>
   </template>
   

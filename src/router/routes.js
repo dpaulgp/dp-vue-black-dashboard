@@ -16,6 +16,8 @@ const EditTurno = () => import(/* webpackChunkName: "common" */ "@/pages/EditTur
 const Produccion = () => import(/* webpackChunkName: "common" */ "@/pages/Produccion.vue");
 const Calidad = () => import(/* webpackChunkName: "common" */ "@/pages/Calidad.vue");
 const Primerasb = () => import(/* webpackChunkName: "common" */ "@/pages/Primerasb.vue");
+const Parada = () => import(/* webpackChunkName: "common" */ "@/pages/Parada.vue");
+
 
 
 
@@ -59,6 +61,11 @@ const routes = [
         "primerasb", 
         name: "primerasb", 
         component: Primerasb 
+      },
+      { path:
+        "parada", 
+        name: "parada", 
+        component: Parada 
       },
 
       //       { 

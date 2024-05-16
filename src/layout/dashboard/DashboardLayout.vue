@@ -23,6 +23,12 @@
           icon="tim-icons icon-bold"
         />
         <sidebar-link
+          to="/dashboard/parada"
+          :name="$t('sidebar.parada')"
+          icon="tim-icons icon-settings-gear-63"
+        />
+
+        <sidebar-link
           to="/dashboard/turno-list"
           :name="$t('sidebar.turnoList')"
           icon="tim-icons icon-puzzle-10"
@@ -32,6 +38,7 @@
           :name="$t('sidebar.icons')"
           icon="tim-icons icon-atom"
         />
+        
         <!-- <sidebar-link
           to="/dashboard/maps"
           :name="$t('sidebar.maps')"
