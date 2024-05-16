@@ -15,7 +15,12 @@
         <sidebar-link
           to="/dashboard/calidad"
           :name="$t('sidebar.calidad')"
-          icon="tim-icons icon-app"
+          icon="tim-icons icon-check-2"
+        />
+        <sidebar-link
+          to="/dashboard/primerasb"
+          :name="$t('sidebar.primerasb')"
+          icon="tim-icons icon-bold"
         />
         <sidebar-link
           to="/dashboard/turno-list"

@@ -13,7 +13,7 @@
       <base-input
         label="Reportadas"
         placeholder="Cantidad"
-        v-model="controlPlanta.cantidad"
+        v-model="controlPlanta.reporte1AsB"
       >
       </base-input>
     </div>
@@ -56,7 +56,7 @@
     methods: {
       fetchCausas() {
         const token = localStorage.getItem('token');
-        fetch('http://localhost:8800/causas/tipo/CL', {
+        fetch('http://localhost:8800/causas/tipo/AB', {
           method: 'GET',
           headers: {
             'Authorization': 'Bearer ' + token,
@@ -80,7 +80,7 @@
         });
       },
       saveChanges() {
-        this.controlPlanta.tipoTransaccion = 'C';
+        this.controlPlanta.tipoTransaccion = 'AB';
         const token = localStorage.getItem('token');  
         const headers = new Headers({
           'Authorization': 'Bearer ' + token,
