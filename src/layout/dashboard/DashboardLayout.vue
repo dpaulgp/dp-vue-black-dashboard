@@ -13,6 +13,11 @@
           icon="tim-icons icon-spaceship"
         />
         <sidebar-link
+          to="/dashboard/calidad"
+          :name="$t('sidebar.calidad')"
+          icon="tim-icons icon-app"
+        />
+        <sidebar-link
           to="/dashboard/turno-list"
           :name="$t('sidebar.turnoList')"
           icon="tim-icons icon-puzzle-10"

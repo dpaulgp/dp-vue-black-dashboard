@@ -47,7 +47,6 @@ export default {
     controlPlanta: {
       type: Object,
       required: true,
-      tipoTransaccion: "P"  
     }
   },
   data() {
@@ -57,7 +56,7 @@ export default {
   },
   methods: {
     saveChanges() {
-
+      this.controlPlanta.tipoTransaccion = 'P';
       const token = localStorage.getItem('token');  
       const headers = new Headers({
     'Authorization': 'Bearer ' + token,  // Use Bearer authentication scheme

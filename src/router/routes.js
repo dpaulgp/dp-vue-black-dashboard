@@ -14,6 +14,8 @@ const Typography = () => import(/* webpackChunkName: "common" */ "@/pages/Typogr
 const TurnoList = () => import(/* webpackChunkName: "common" */ "@/pages/TurnoList.vue");
 const EditTurno = () => import(/* webpackChunkName: "common" */ "@/pages/EditTurno.vue");
 const Produccion = () => import(/* webpackChunkName: "common" */ "@/pages/Produccion.vue");
+const Calidad = () => import(/* webpackChunkName: "common" */ "@/pages/Calidad.vue");
+
 
 // Definición de rutas
 const routes = [
@@ -45,6 +47,11 @@ const routes = [
         "produccion", 
         name: "produccion", 
         component: Produccion 
+      },
+      { path:
+        "calidad", 
+        name: "calidad", 
+        component: Calidad 
       },
 
       //       { 

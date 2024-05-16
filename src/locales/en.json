@@ -113,6 +113,9 @@
     "turnoList": "Turnos",
     "typography": "Typography",
     "rtlSupport": "RTL Support",
-    "produccion": "Produccion"
+    "produccion": "Produccion",
+    "calidad": "Calidad"
+
+
   }
 }
