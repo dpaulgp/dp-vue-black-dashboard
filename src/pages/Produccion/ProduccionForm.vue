@@ -5,7 +5,7 @@
 
 <div class="row" >
 
-  <div class="col-md-6 pr-md-1">
+  <div class="col-md-5 pr-md-1">
       <base-input
         label="Reportadas"
         placeholder="Cantidad"
@@ -13,7 +13,7 @@
       >
       </base-input>
     </div>
-  <div class="col-md-6 pr-md-1">
+  <div class="col-md-5 pr-md-1">
     <label for="finTurno">Fin de Turno</label> <!-- Asegúrate de que el 'for' en el label coincida con el 'id' del select -->
     <select class="form-control" id="finTurno" v-model="controlPlanta.finTurno">
       <option v-for="finTurnoOption in finTurnoOptions" :key="finTurnoOption" :value="finTurnoOption">{{ finTurnoOption }}</option>
@@ -23,7 +23,7 @@
 </div>
 
 <div class="row">
-      <div class="col-md-8 pr-md-1">
+      <div class="col-md-10 pr-md-1">
         <base-input>
           <label>Observaciones</label>
           <textarea

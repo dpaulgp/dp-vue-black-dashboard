@@ -14,17 +14,20 @@
     </div>
     <div class="col-md-6">
       <control-planta-h-info-card :controlPlantaHeader="controlPlantaHeader"></control-planta-h-info-card>
+      <control-planta-h-user-card :controlPlantaHeader="controlPlantaHeader"></control-planta-h-user-card>
+
     </div>
 
     <div class="col-md-6">
-      <control-planta-h-user-card :controlPlantaHeader="controlPlantaHeader"></control-planta-h-user-card>
-    </div>
-
-    <div class="col-md-12">
       <produccion-form :controlPlanta="controlPlantaHeader.controlPlantaNew"> </produccion-form>
       <!-- <produccion-form v-if="controlPlanta && Object.keys(controlPlanta).length > 0" :controlPlanta="controlPlantaHeader.controlPlantaNew"></produccion-form> -->
     </div>
     
+    <!-- <div class="col-md-6">
+      <control-planta-h-user-card :controlPlantaHeader="controlPlantaHeader"></control-planta-h-user-card>
+    </div> -->
+
+
 
     <!-- <div class="col-md-12">
       <control-planta-card :user="user"> </control-planta-card>
