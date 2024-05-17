@@ -1,12 +1,13 @@
 <template>
-  <card title="Inicio Parada">
+  <card title="Fin de Parada">
     <div class="row">
       
  
       <div class="col-md-2 pr-md-1">
         <label>Usuario</label>
-        <p class="card-text">  {{ controlPlanta.usuarioTransaccion }}</p>
+        <p class="card-text">{{ controlPlanta.usuarioTransaccion }}</p>
       </div>
+
 
       <div class="col-md-2 pr-md-1">
         <label>Fecha</label>
@@ -15,7 +16,7 @@
 
       <div class="col-md-3 pr-md-1">
         <label for="causaControlPlanta">Causa de Parada</label>
-        <select class="form-control" id="causaControlPlanta" v-model="controlPlanta.causa" :disabled="controlPlanta.estado !== 0">
+        <select class="form-control" id="causaControlPlanta" v-model="controlPlanta.causa" :disabled="controlPlanta.estado === 1">
           <option v-for="causa in causasOptions" :key="causa.id" :value="causa.id">
             {{ causa.nombre }}
           </option>
@@ -32,7 +33,7 @@
             class="form-control"
             placeholder="..."
             v-model="controlPlanta.observaciones"
-            :disabled="controlPlanta.estado !== 0"
+            :disabled="controlPlanta.estado === 1"
           >
           </textarea>
         </base-input>
@@ -41,7 +42,7 @@
 
     </div>
 
-<base-button slot="footer" type="primary" fill @click="saveChanges" v-show="controlPlanta.estado === 0">Aceptar</base-button>
+<base-button slot="footer" type="primary" fill @click="saveChanges" v-show="controlPlanta.estado === 1">Aceptar</base-button>
 
   </card>
   </template>
@@ -89,8 +90,8 @@
         });
       },
       saveChanges() {
-        this.controlPlanta.tipoTransaccion = 'R';
-        this.controlPlanta.estado = '6';
+        this.controlPlanta.tipoTransaccion = 'FP';
+        this.controlPlanta.estado = '0';
 
         const token = localStorage.getItem('token');  
         const headers = new Headers({

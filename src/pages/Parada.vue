@@ -21,11 +21,17 @@
     </div>
 
     <div class="col-md-12">
-      <parada-form :controlPlanta="controlPlantaHeader.controlPlantaNew"> </parada-form>
-      <!-- <produccion-form v-if="controlPlanta && Object.keys(controlPlanta).length > 0" :controlPlanta="controlPlantaHeader.controlPlantaNew"></produccion-form> -->
+      <parada-form :controlPlanta="controlPlantaHeader.controlPlantaInicioParada"> </parada-form>
     </div>
-    
+    <div class="col-md-12">
+      <atencion-form :controlPlanta="controlPlantaHeader.controlPlantaInicioAtencion" 
+      > </atencion-form>
+    </div>
+    <div class="col-md-12">
+      <parada-fin-form :controlPlanta="controlPlantaHeader.controlPlantaFinParada"> </parada-fin-form>
+    </div>
 
+    
     <!-- <div class="col-md-12">
       <control-planta-card :user="user"> </control-planta-card>
     </div> -->
@@ -53,7 +59,11 @@ import ControlPlantaHeaderCard from "./Produccion/ControlPlantaHeaderCard";
 import ParadaForm from "./Parada/ParadaForm";
 import ControlPlantaHInfoCard from "./Produccion/ControlPlantaHInfoCard";
 import ControlPlantaHUserCard from "./Produccion/ControlPlantaHUserCard.vue";
+import AtencionForm from "./Parada/AtencionForm";
+import ParadaFinForm from "./Parada/ParadaFinForm";
+
 import Modal from "@/components/Modal.vue";
+
 // import ControlPlantaCard from "./Produccion/ControlPlantaCard.vue";
 
 export default {
@@ -62,6 +72,8 @@ export default {
     ControlPlantaHInfoCard,
     ControlPlantaHUserCard,
     ParadaForm,
+    AtencionForm,
+    ParadaFinForm,
     Modal,
     // ControlPlantaCard,
   },
@@ -71,6 +83,9 @@ export default {
 
       controlPlantaHeader: {
         controlPlantaNew: {},
+        controlPlantaInicioParada: {},
+        controlPlantaInicioAtencion: {},
+        controlPlantaFinParada: {},
         maquina: {
         seccion: {}  
         },
@@ -99,7 +114,7 @@ export default {
       console.log('fetching maquinaId with id:', maquinaId);
 
       fetch(`http://localhost:8800/controlPlantaHeader/params/${maquinaId}`, 
-      // fetch(`http://localhost:8800/controlPlantaHeader/maquina/${maquinaId}`, 
+
       {
     headers: headers
 })
