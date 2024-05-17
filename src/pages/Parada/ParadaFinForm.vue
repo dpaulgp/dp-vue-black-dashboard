@@ -16,7 +16,7 @@
 
       <div class="col-md-3 pr-md-1">
         <label for="causaControlPlanta">Causa de Parada</label>
-        <select class="form-control" id="causaControlPlanta" v-model="controlPlanta.causa" :disabled="controlPlanta.estado === 1">
+        <select class="form-control" id="causaControlPlanta" v-model="controlPlanta.causa" :disabled="controlPlanta.estado !== 1">
           <option v-for="causa in causasOptions" :key="causa.id" :value="causa.id">
             {{ causa.nombre }}
           </option>
@@ -33,7 +33,7 @@
             class="form-control"
             placeholder="..."
             v-model="controlPlanta.observaciones"
-            :disabled="controlPlanta.estado === 1"
+            :disabled="controlPlanta.estado !== 1"
           >
           </textarea>
         </base-input>
