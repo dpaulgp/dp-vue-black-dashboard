@@ -7,3 +7,5 @@ npm-debug.log
 dist/
 package.json
 package.json
+certificado.pem
+clave-privada.pem
