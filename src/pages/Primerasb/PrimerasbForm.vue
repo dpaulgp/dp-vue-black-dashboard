@@ -117,6 +117,7 @@
         })
         .then(data => {
           console.log('Success:', data);
+          this.$emit('dataUpdated'); // Emitir un evento cuando los datos se guarden exitosamente
         })
         .catch((error) => {
           console.error('Error:', error);

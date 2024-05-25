@@ -21,7 +21,7 @@
     </div>
 
     <div class="col-md-12">
-      <primerasb-form :controlPlanta="controlPlantaHeader.controlPlantaNew"> </primerasb-form>
+      <primerasb-form :controlPlanta="controlPlantaHeader.controlPlantaNew" @dataUpdated="fetchControlPlantaHeader"> </primerasb-form>
       <!-- <produccion-form v-if="controlPlanta && Object.keys(controlPlanta).length > 0" :controlPlanta="controlPlantaHeader.controlPlantaNew"></produccion-form> -->
     </div>
     

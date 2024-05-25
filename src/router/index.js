@@ -39,6 +39,11 @@ router.beforeEach((to, from, next) => {
     if (!isAuthenticated) {
       console.log('Not authenticated, redirecting to login'); // No autenticado, redirigir a login
       next({ name: 'login' });
+//       // Remove the token from local storage or session storage
+// localStorage.removeItem('token');  // Adjust based on where you store your token
+// localStorage.removeItem('usuario');
+// // Redirect to login or home page
+// this.$router.push('/');  // Adjust the path based on your routing setup
     } else {
       console.log('Authenticated, proceeding'); // Autenticado, continuar
       next();

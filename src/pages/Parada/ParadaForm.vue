@@ -114,6 +114,9 @@
         })
         .then(data => {
           console.log('Success:', data);
+          this.fetchCausas();
+          this.$router.push({ name: 'produccion' });
+
         })
         .catch((error) => {
           console.error('Error:', error);
